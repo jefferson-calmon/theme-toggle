@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* display: grid;
+    align-items: center;
+    justify-items: center; */
+
+    --bg: #f1f1f1;
+    --white: #fff;
+    --color-hover: #0077FF;
+    --color-text: #333333;
+    : #4d4d4d;
+}
+
+body{
+    background: var(--bg);
+    color: var(--color-text);
+}
+
+.content{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+header{
+    min-height: 67px;
+    background: var(--white);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+header .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 67px;
+    padding: 25px 0;
+}
+
+header .content h1{
+    font-weight: bold;
+}
+
+header .content nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header .content nav ul li a{
+    text-decoration: none;
+    color: inherit;
+    margin-left: 17px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+header .content nav ul li a:hover{
+    color: var(--color-hover);
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+
+
+    margin-left: 30px;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--color-hover);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    place-items: center;
+    place-content: center;
+    gap: 50px;
+}
+
+main .box{
+    background: var(--white);
+    padding: 50px;
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+}
+
+main .box h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+main .box p{
+    font-size: 16px;
+    color: var(--color-text-light);
+}
